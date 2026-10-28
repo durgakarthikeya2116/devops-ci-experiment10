@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - echo "Preparing Python environment"
+      - python3 --version
+
+  pre_build:
+    commands:
+      - echo "Checking project files"
+      - ls -la
+
+  build:
+    commands:
+      - echo "Running automated tests"
+      - python3 -m unittest discover -v
+
+  post_build:
+    commands:
+      - echo "Build phases completed"
